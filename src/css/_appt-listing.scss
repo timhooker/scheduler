@@ -13,18 +13,100 @@
   top: 0;
   left: 0;
   bottom: 0;
-  min-width: 100%;
+  right: 0;
+  // min-width: 100%;
 }
 
 .appt-nav {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   height: 64px;
-  // background: aqua;
+  background: aqua;
 }
 
-.app-content {
+.back-btn, .edit-btn {
+  display: none;
+}
+
+.add-btn {
+  position: absolute;
+  top: 42%;
+  right: 5%;
+  transform: translate(0%, -50%);
+  font-size: 2.5em;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.appt-nav h1 {
+  text-align: center;
+}
+
+.appt-content {
   position: absolute;
   margin-top: 64px;
+  padding: 1em;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.appt-list {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.appt {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  border: solid 1px #777777;
+}
+
+.appt-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 90%;
+  padding-left: 1em;
+}
+
+.appt-details h3 {
+  // margin: 0;
+}
+
+.appt-time {
+  float: left;
+  margin-right: 50px;
+}
+
+.appt-address-icon {
+  // position: absolute;
+  // bottom: 5px;
+  // right: 0;
+}
+
+.appt-delete {
+  display: none;
+}
+
+.appt-delete-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 10%;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #c2c2c2;
+  padding-right: 1em;
 }
