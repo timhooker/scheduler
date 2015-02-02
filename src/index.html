@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+</body>
 
   <script type="type/html" id="appt-listing">
     <header>
-      <nav>
+      <nav class="appt-nav">
         <h1>Appts</h1>
         <button class="add-btn">+</button>
         <button class="back-btn"><</button>
@@ -28,12 +29,12 @@
             </p>
           </div>
 
-          <div class="appt-remove">
+          <div class="appt-delete">
             <h3>Are You Sure?</h3>
             <button class="appt-confirm-delete">Delete</button>
             <button class="appt-cancel-delete">Cancel</button>
           </div>
-          <button class="delete-appt-btn"></button>
+          <button class="appt-delete-btn"></button>
         </li>
         <li class="appt"></li>
         <li class="appt"></li>
@@ -90,32 +91,31 @@
   </script>
 
   <script type="type/html" id="appt-view">
-  <header>
-    <nav>
-      <h1>Appts</h1>
-      <button class="add-btn">+</button>
-      <button class="back-btn"><</button>
-      <button class="edit-btn">e</button>
-    </nav>
-  </header>
+    <header>
+      <nav>
+        <h1>Appts</h1>
+        <button class="add-btn">+</button>
+        <button class="back-btn"><</button>
+        <button class="edit-btn">e</button>
+      </nav>
+    </header>
 
-  <div class="appt-view-content">
-    <div class="appt-view-detail">
-      <h3 class="appt-title"></h3>
-      <p class="appt-date"></p>
-      <p class="appt-time"></p>
-      <p class="appt-address"></p>
+    <div class="appt-view-content">
+      <div class="appt-view-detail">
+        <h3 class="appt-title"></h3>
+        <p class="appt-date"></p>
+        <p class="appt-time"></p>
+        <p class="appt-address"></p>
+      </div>
+      <div class="appt-view-weather">
+
+      </div>
+
     </div>
-    <div class="appt-view-weather">
-
-    </div>
-
-  </div>
 
   </script>
 
   <script src="js/vendor.js"></script>
   <script src="js/app.js"></script>
 
-</body>
 </html>
