@@ -8,34 +8,83 @@
 </head>
 <body>
 
-<header>
-  <nav>
-    <h1>Appts</h1>
-    <button class="add-btn">+</button>
-    <button class="back-btn"><</button>
-    <button class="edit-btn">e</button>
-  </nav>
-</header>
-<div class='app-content'>
-  <ul class="appt-list">
-    <li class="appt">
-      <div class="appt-details">
-        <h3 class="appt-time">5pm</h3>
-        <h3 class="appt-title"></h3>
-        <h4 class="appt-address">
-          <span>M</span>
-        </h4>
-      </div>
-      <button class="delete-appt-btn"></button>
-    </li>
-    <li class="appt"></li>
-    <li class="appt"></li>
-  </ul>
+  <script type="type/html" id="appt-listing">
+    <header>
+      <nav>
+        <h1>Appts</h1>
+        <button class="add-btn">+</button>
+        <button class="back-btn"><</button>
+        <button class="edit-btn">e</button>
+      </nav>
+    </header>
+    <div class='app-content'>
+      <ul class="appt-list">
+        <li class="appt">
+          <div class="appt-details">
+            <h3 class="appt-time">5pm</h3>
+            <h3 class="appt-title"></h3>
+            <h4 class="appt-address">
+              <span>M</span>
+            </h4>
+          </div>
+          <button class="delete-appt-btn"></button>
+        </li>
+        <li class="appt"></li>
+        <li class="appt"></li>
+      </ul>
 
-</div>
-<footer>
+    </div>
+    <footer>
 
-</footer>
+    </footer>
+  </script>
+
+  <script type="type/html" id="appt-edit">
+
+    <header>
+      <nav>
+        <h1>Appts</h1>
+        <button class="add-btn">+</button>
+        <button class="back-btn"><</button>
+        <button class="edit-btn">e</button>
+      </nav>
+    </header>
+
+    <div class="app-content-edit">
+
+      <label>
+        Title
+        <input class="appt-edit-title">
+      </label>
+
+      <label>
+        Date
+        <input class="appt-edit-date">
+
+      </label>
+
+      <label>
+        Time
+        <input class="appt-edit-time">
+      </label>
+
+      <label>
+        Street
+        <input class="appt-edit-street">
+      </label>
+
+      <label>
+        City/State
+        <input class="appt-edit-city-state">
+      </label>
+
+      <button class="appt-save-btn">Save</button>
+    </div>
+
+  </script>
+
+  
+
   <script src="js/vendor.js"></script>
   <script src="js/app.js"></script>
 
