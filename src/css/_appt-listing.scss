@@ -1,0 +1,30 @@
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+
+@-ms-viewport{
+    width: extend-to-zoom;
+    zoom: 1.0;
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+}
+
+.appt-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 64px;
+  // background: aqua;
+}
+
+.app-content {
+  position: absolute;
+  margin-top: 64px;
+}
