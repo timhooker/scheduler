@@ -2,14 +2,13 @@ $(function() {
 
   var apptListing = $('#appt-listing').html();
 
-  $('body').html(apptListing);
+  $('.wrapper').html(apptListing);
 
   $('.appt-nav').on('click', '.add-btn', function() {
-    var apptNav = $(this);
-    var apptEdit = $('#appt-edit').html();
+    var apptEdit = $('#appt-view').html();
 
-    console.log(apptEdit);
-    $('body').html(apptEdit);
+    $('.wrapper').html(apptEdit);
+
   });
 
 
