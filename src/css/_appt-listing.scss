@@ -25,7 +25,7 @@
   left: 0;
   right: 0;
   height: 64px;
-  background: aqua;
+  background: #FF8457;
 }
 
 .back-btn, .edit-btn {
@@ -94,9 +94,10 @@
 }
 
 .appt-address-icon {
-  // position: absolute;
-  // bottom: 5px;
-  // right: 0;
+  position: absolute;
+  right: 9%;
+  font-family: 'docket-icons', sans-serif;
+  font-size: 1.5em;
 }
 
 .appt-delete {
