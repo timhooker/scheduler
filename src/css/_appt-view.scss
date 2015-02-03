@@ -1,0 +1,43 @@
+.appt-view-content {
+  // background-image: url(../img/bkg1.jpg);
+  // background-size: cover;
+  // background-attachment: fixed;
+  width: 100%;
+  position: absolute;
+  margin-top: 64px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 1.25em;
+  background: white;
+}
+
+.appt-view-content:before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color:black;
+  opacity: .5;
+  z-index: -1;
+}
+
+.appt-view-detail h3, .appt-view-detail p {
+  display: block;
+}
+
+.appt-view-detail {
+  width: 92%;
+  height: 200px;
+  background: white;
+}
+
+.appt-view-weather {
+  width: 92%;
+  height: 200px;
+  background: gray;
+}
