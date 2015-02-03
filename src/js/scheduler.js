@@ -3,7 +3,7 @@ $(function() {
   var apptListing = $('#appt-listing').html();
 
   $('.wrapper').html(
-    '<div id="appt-listing">' +
+    '<div id="appt-listing" class="page">' +
     apptListing +
     '</div>');
 
