@@ -1,0 +1,38 @@
+.appt-edit-content {
+  // background-image: url(../img/bkg1.jpg);
+  // background-size: cover;
+  // background-attachment: fixed;
+  width: 95%;
+  position: absolute;
+  margin-top: 64px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  padding: 1.25em;
+}
+
+.appt-edit-content:before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color:black;
+  opacity: .5;
+  z-index: -1;
+}
+
+.appt-edit-content label, .appt-edit-content input {
+  display: block;
+}
+
+.appt-edit-content input {
+  margin-bottom: 1em;
+  height: 50px;
+  width: 92%;
+  position: relative;
+}
