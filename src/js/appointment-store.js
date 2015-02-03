@@ -2,7 +2,7 @@
 app.AppointmentStore = function() {
   //TODO: Create Store
   //
-  var collection = [1, 2, 3];
+  var collection = [];
   //Should have at least these elements:
 
   var self = {

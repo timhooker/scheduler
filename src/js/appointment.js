@@ -7,7 +7,9 @@ app.Appointment = function (spec) {
     title: spec.title,
     date: spec.date,
     time: spec.time,
-    address: spec.address,
+    street: spec.street,
+    cityState: spec.cityState,
+    address: spec.street + ' ' + spec.cityState,
     aptId: Date.now(),
     equal: function (otherUser) {
       return self.aptId === otherUser.aptId;

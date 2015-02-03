@@ -1,11 +1,12 @@
 $(function() {
 
-  var apptListing = $('#appt-listing').html();
+  // var apptListing = $('#appt-listing').html();
 
   $('.wrapper').html(
-    '<div id="appt-listing" class="page">' +
-    apptListing +
-    '</div>');
+    app.views['appt-listing']);
+    // '<div id="appt-listing" class="page">' +
+    // apptListing +
+    // '</div>');
 
   navButtons();
   listingsPageEvents();
