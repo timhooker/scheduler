@@ -40,7 +40,7 @@
       </div>
   </div>
 </body>
-  <script type="type/html" id="appt-listing">
+<script type="type/html" id="appt-listing">
   <header>
     <nav class="appt-nav">
       <h2>DOCKET</h2>
@@ -50,59 +50,61 @@
 
     <div class="appt-content">
       <ul class="appt-list">
-        <li class="appt">
-          <div class="appt-details">
-            <h3 class="appt-listing-time">5pm</h3>
-            <h3 class="appt-listing-title">Coding with Tim</h3>
-            <p class="appt-listing-address">
-            201 West Main St., Durham, NC 27701
-              <span class="appt-address-icon">p</span>
-            </p>
-          </div>
+        <% app.appointments.each(function(appt){ %>
+          <li class="appt">
+            <div class="appt-details">
+              <h3 class="appt-listing-time"> </h3>
+              <h3 class="appt-listing-title">Coding with Tim</h3>
+              <p class="appt-listing-address">
+              201 West Main St., Durham, NC 27701
+                <span class="appt-address-icon">p</span>
+              </p>
+            </div>
 
-          <div class="appt-delete">
-            <h3>Are You Sure?</h3>
-            <button class="appt-confirm-delete">Delete</button>
-            <button class="appt-cancel-delete">Cancel</button>
-          </div>
-          <button class="appt-delete-btn">X</button>
-        </li>
+            <div class="appt-delete">
+              <h3>Are You Sure?</h3>
+              <button class="appt-confirm-delete">Delete</button>
+              <button class="appt-cancel-delete">Cancel</button>
+            </div>
+            <button class="appt-delete-btn">X</button>
+          </li>
+        <% }) %>
 
-        <li class="appt">
-          <div class="appt-details">
-            <h3 class="appt-listing-time">5pm</h3>
-            <h3 class="appt-listing-title">Coding with Tim</h3>
-            <p class="appt-listing-address">
-            201 West Main St., Durham, NC 27701
-              <span class="appt-address-icon">p</span>
-            </p>
-          </div>
-
-          <div class="appt-delete">
-            <h3>Are You Sure?</h3>
-            <button class="appt-confirm-delete">Delete</button>
-            <button class="appt-cancel-delete">Cancel</button>
-          </div>
-          <button class="appt-delete-btn">X</button>
-        </li>
-
-        <li class="appt">
-          <div class="appt-details">
-            <h3 class="appt-listing-time">5pm</h3>
-            <h3 class="appt-listing-title">Coding with Tim</h3>
-            <p class="appt-listing-address">
-            201 West Main St., Durham, NC 27701
-              <span class="appt-address-icon">p</span>
-            </p>
-          </div>
-
-          <div class="appt-delete">
-            <h3>Are You Sure?</h3>
-            <button class="appt-confirm-delete">Delete</button>
-            <button class="appt-cancel-delete">Cancel</button>
-          </div>
-          <button class="appt-delete-btn">X</button>
-        </li>
+        // <li class="appt">
+        //   <div class="appt-details">
+        //     <h3 class="appt-listing-time">5pm</h3>
+        //     <h3 class="appt-listing-title">Coding with Tim</h3>
+        //     <p class="appt-listing-address">
+        //     201 West Main St., Durham, NC 27701
+        //       <span class="appt-address-icon">p</span>
+        //     </p>
+        //   </div>
+        //
+        //   <div class="appt-delete">
+        //     <h3>Are You Sure?</h3>
+        //     <button class="appt-confirm-delete">Delete</button>
+        //     <button class="appt-cancel-delete">Cancel</button>
+        //   </div>
+        //   <button class="appt-delete-btn">X</button>
+        // </li>
+        //
+        // <li class="appt">
+        //   <div class="appt-details">
+        //     <h3 class="appt-listing-time">5pm</h3>
+        //     <h3 class="appt-listing-title">Coding with Tim</h3>
+        //     <p class="appt-listing-address">
+        //     201 West Main St., Durham, NC 27701
+        //       <span class="appt-address-icon">p</span>
+        //     </p>
+        //   </div>
+        //
+        //   <div class="appt-delete">
+        //     <h3>Are You Sure?</h3>
+        //     <button class="appt-confirm-delete">Delete</button>
+        //     <button class="appt-cancel-delete">Cancel</button>
+        //   </div>
+        //   <button class="appt-delete-btn">X</button>
+        // </li>
 
 
       </ul>
