@@ -36,7 +36,7 @@ header {
 }
 
 .edit-btn {
-  left: 96%;
+  left: 90%;
 }
 
 .appt-delete {
@@ -49,10 +49,6 @@ header {
   padding: 0 1em;
 }
 
-<<<<<<< HEAD
-.hide {
-  display: none;
-=======
 .page {
   position: absolute;
   top: 0;
@@ -68,5 +64,9 @@ header {
 
 .previous {
   left: -100%;
->>>>>>> 9d27edaab9bfab851a93b8030887e22bffb40afe
+}
+
+.appt-listing-time {
+  float: left;
+  margin-right: 8%;
 }
