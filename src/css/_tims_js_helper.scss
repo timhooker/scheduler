@@ -36,5 +36,15 @@ header {
 }
 
 .edit-btn {
-  left: 12%;
+  left: 96%;
+}
+
+.appt-delete {
+  position: absolute;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background-color: #eee;
+  padding: 0 1em;
 }
