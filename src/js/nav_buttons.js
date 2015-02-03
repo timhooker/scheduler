@@ -1,5 +1,4 @@
 function navButtons() {
-
   $('.appt-nav').on('click', '.add-btn', function() {
     showSection('appt-edit');
     navButtons();
@@ -39,6 +38,6 @@ function showSection(sectionID, direction) {
 
     setTimeout(function() {
       currentSection.remove();
-    }, 300)
-  }, 100)
+    }, 300);
+  }, 100);
 }

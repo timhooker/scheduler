@@ -15,7 +15,6 @@ function listingsPageEvents() {
     confirmDelete.fadeIn('fast');
     // confirm delete to remove
     confirmDelete.children('.appt-confirm-delete').on('click', function() {
-      console.log('click');
       appt.remove();
     });
     // if cancelled, remove
