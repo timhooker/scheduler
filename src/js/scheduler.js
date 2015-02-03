@@ -8,6 +8,7 @@ $(function() {
     '</div>');
 
   navButtons();
+  listingsPageEvents();
   // $('.appt-nav').on('click', '.add-btn', function() {
   //   var apptEdit = $('#appt-edit').html();
   //

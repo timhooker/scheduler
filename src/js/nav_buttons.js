@@ -7,6 +7,7 @@ function navButtons() {
   $('.appt-nav').on('click', '.back-btn', function() {
     showSection('#appt-listing');
     navButtons();
+    listingsPageEvents();
   });
   $('.appt-nav').on('click', '.edit-btn', function() {
     showSection('#appt-edit');
