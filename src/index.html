@@ -5,21 +5,51 @@
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <title>Title</title>
   <link rel="stylesheet" href="css/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
   <div class="wrapper">
+    <header>
+      <nav class="appt-nav">
+        <h1>Appts</h1>
+        <button class="add-btn">+</button>
+        <button class="back-btn"><</button>
+        <button class="edit-btn">e</button>
+      </nav>
+    </header>
+      <div class='app-content'>
+        <ul class="appt-list">
+          <li class="appt">
+            <div class="appt-details">
+              <h3 class="appt-time">5pm</p>
+              <h3 class="appt-title"></h3>
+              <p class="appt-address">
+                <span>M</span>
+              </p>
+            </div>
 
+            <div class="appt-delete" style="display: hidden">
+              <h3>Are You Sure?</h3>
+              <button class="appt-confirm-delete">Delete</button>
+              <button class="appt-cancel-delete">Cancel</button>
+            </div>
+            <button class="appt-delete-btn"></button>
+          </li>
+
+        </ul>
+      </div>
   </div>
 </body>
   <script type="type/html" id="appt-listing">
-
+  <header>
     <nav class="appt-nav">
       <h1>Appts</h1>
       <button class="add-btn">+</button>
       <button class="back-btn"><</button>
       <button class="edit-btn">e</button>
     </nav>
-
+  </header>
     <div class='app-content'>
       <ul class="appt-list">
         <li class="appt">
@@ -46,14 +76,14 @@
   </script>
 
   <script type="type/html" id="appt-edit">
-
-    <nav>
+  <header>
+    <nav class="appt-nav">
       <h1>Appts</h1>
       <button class="add-btn">+</button>
       <button class="back-btn"><</button>
       <button class="edit-btn">e</button>
     </nav>
-
+  </header>
     <div class="appt-edit-content">
 
       <label>
@@ -89,7 +119,7 @@
 
   <script type="type/html" id="appt-view">
 
-    <nav>
+    <nav class='appt-nav'>
       <h1>Appts</h1>
       <button class="add-btn">+</button>
       <button class="back-btn"><</button>
