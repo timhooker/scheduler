@@ -1,19 +1,25 @@
 function listingsPageEvents() {
-  $('.appt').on('click', '.appt-details', function() {
 
-    showSection('#appt-view');
+  $('.appt').on('click', '.appt-details', function() {
+    // clicking on appt brings up the view page
+    showSection('appt-view');
     navButtons();
   });
+
   $('.appt').on('click', '.appt-delete-btn', function() {
+    // clicking on delete brings up the delete prompt
     var deleteBtn = $(this);
     var appt = deleteBtn.closest('.appt');
     var confirmDelete = appt.children('.appt-delete');
+    // show the delete
     confirmDelete.fadeIn('fast');
-    confirmDelete.children('.appt-confirm-delete').on('click', function(){
+    // confirm delete to remove
+    confirmDelete.children('.appt-confirm-delete').on('click', function() {
       console.log('click');
       appt.remove();
     });
-    confirmDelete.children('.appt-cancel-delete').on('click', function(){
+    // if cancelled, remove
+    confirmDelete.children('.appt-cancel-delete').on('click', function() {
       confirmDelete.fadeOut('fast');
     });
   });

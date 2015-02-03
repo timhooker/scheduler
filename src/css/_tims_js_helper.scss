@@ -49,6 +49,24 @@ header {
   padding: 0 1em;
 }
 
+<<<<<<< HEAD
 .hide {
   display: none;
+=======
+.page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0%;
+  max-width: 100%;
+  transition: left .3s ease-in;
+}
+.inactive {
+  left: 100%;
+}
+
+.previous {
+  left: -100%;
+>>>>>>> 9d27edaab9bfab851a93b8030887e22bffb40afe
 }
