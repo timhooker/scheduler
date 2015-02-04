@@ -6,7 +6,7 @@ $(function () {
     //
     //
     var appointments = app.aptManager.query();
-    console.log('hey');
+    // console.log('hey');
     var pageID = 'appt-listing';
 
     $('.wrapper').html(
