@@ -1,5 +1,4 @@
 app.editAppointment = function() {
-  app.aptManager = app.AppointmentStore();
 
   var appointments = app.aptManager.query();
   var pageID = 'appt-edit';

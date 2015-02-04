@@ -1,7 +1,4 @@
 app.viewAppointment = function() {
-  app.appointments = app.AppointmentStore();
-  //
-  //
   var pageID = 'appt-view';
 
   $('.wrapper').html(
