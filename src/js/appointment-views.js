@@ -19,6 +19,6 @@ $(function () {
     //
     // Where foo is the compiled template that was defined in the script
     // tag whose id was foo... Hmm...
-    app.views[elem.attr('id')] = _.template(elem.html());
+    app.views[elem.attr('id')] = _.template(elem.html(), { 'variable': 'm'});
   });
 });
