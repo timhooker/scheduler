@@ -9,7 +9,7 @@ app.AppointmentStore = function() {
     street: '555 Blackwell',
     cityState: 'Durham, NC',
     address: '555 Blackwell, Durham NC'
-  }
+  };
   var collection = [sampleAppointment];
   //Should have at least these elements:
 
