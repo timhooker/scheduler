@@ -13,7 +13,7 @@
   </div>
 </body>
 <script type="type/html" id="appt-listing">
-  <div id='<%= pageID %>' class="page">
+  <div id='<%= m.pageID %>' class="page">
     <header>
       <nav class="appt-nav">
         <h2>DOCKET</h2>
@@ -23,7 +23,7 @@
 
       <div class="appt-content">
         <ul class="appt-list">
-          <% appointments.forEach(function(appt){ %>
+          <% m.appointments.forEach(function(appt){ %>
             <li class="appt" data-id='<%- appt.aptId %>'>
               <div class="appt-details">
                 <h3 class="appt-listing-time"><%- appt.time %></h3>
@@ -50,7 +50,7 @@
 </script>
 
 <script type="type/html" id="appt-edit">
-<div id='<%= pageID %>' class="page">
+<div id='<%= m.pageID %>' class="page">
   <header>
     <nav class="appt-nav">
       <h1>Appts</h1>
@@ -61,27 +61,27 @@
 
       <label>
         Title
-        <input class="appt-edit-title" placeholder="<%- appointment.title %>">
+        <input class="appt-edit-title" placeholder="<%- m.appointment.title %>">
       </label>
 
       <label>
         Date
-        <input class="appt-edit-date" placeholder="<%- appointment.date %>">
+        <input class="appt-edit-date" placeholder="<%- m.appointment.date %>">
       </label>
 
       <label>
         Time
-        <input class="appt-edit-time" placeholder="<%- appointment.time %>">
+        <input class="appt-edit-time" placeholder="<%- m.appointment.time %>">
       </label>
 
       <label>
         Street
-        <input class="appt-edit-street" placeholder="<%- appointment.street %>">
+        <input class="appt-edit-street" placeholder="<%- m.appointment.street %>">
       </label>
 
       <label>
         City/State
-        <input class="appt-edit-city-state" placeholder="<%- appointment.cityState %>">
+        <input class="appt-edit-city-state" placeholder="<%- m.appointment.cityState %>">
       </label>
 
       <button class="appt-save-btn">Save</button>
@@ -90,7 +90,7 @@
   </script>
 
   <script type="type/html" id="appt-view">
-  <div id='<%= pageID %>' class="page">
+  <div id='<%= m.pageID %>' class="page">
     <header>
       <nav class="appt-nav">
         <h1>Appts</h1>
@@ -101,10 +101,10 @@
 
     <div class="appt-view-content">
       <div class="appt-view-detail">
-        <h3 class="appt-title"><%- appointment.title %></h3>
-        <p class="appt-date"><%- appointment.date %></p>
-        <p class="appt-time"><%- appointment.time %></p>
-        <p class="appt-address"><%- appointment.address %></p>
+        <h3 class="appt-title"><%- m.appointment.title %></h3>
+        <p class="appt-date"><%- m.appointment.date %></p>
+        <p class="appt-time"><%- m.appointment.time %></p>
+        <p class="appt-address"><%- m.appointment.address %></p>
       </div>
       <div class="appt-view-weather">
 

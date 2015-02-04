@@ -14,7 +14,7 @@ $(function () {
 
     navButtons();
     listingsPageEvents();
-  }
+  };
   app.viewAppointment = function () {
 
     var appointments = app.aptManager.query();
@@ -24,6 +24,6 @@ $(function () {
       app.views['appt-view']({ appointment: appointments[0], pageID: pageID }) );
 
     navButtons();
-  }
+  };
 
 });

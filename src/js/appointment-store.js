@@ -10,7 +10,7 @@ app.AppointmentStore = function() {
     cityState: 'Durham, NC',
     address: '555 Blackwell, Durham NC',
     aptId: 8765309
-  }
+  };
   var collection = [sampleAppointment];
   //Should have at least these elements:
 
