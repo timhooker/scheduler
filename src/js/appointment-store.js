@@ -12,7 +12,7 @@ app.AppointmentStore = function() {
     aptId: 8765309
   };
 
-  var collection = [sampleAppointment];
+  var collection = [];
   //Should have at least these elements:
 
   var self = {
