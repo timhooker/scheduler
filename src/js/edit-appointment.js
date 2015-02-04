@@ -20,6 +20,7 @@ app.editAppointment = function() {
     var appt = createApptFromForm();
     app.aptManager.add(appt);
     resetApptForm();
+    
 
     return false;
   });

@@ -8,7 +8,8 @@ app.AppointmentStore = function() {
     time: '1pm',
     street: '555 Blackwell',
     cityState: 'Durham, NC',
-    address: '555 Blackwell, Durham NC'
+    address: '555 Blackwell, Durham NC',
+    aptId: 8765309
   };
 
   var collection = [sampleAppointment];
@@ -16,9 +17,8 @@ app.AppointmentStore = function() {
 
   var self = {
     add: function(obj) {
-        // obj.aptId = collection.length + 1;
         collection.push(obj);
-        // localStorage.collection = JSON.stringify(collection);
+        localStorage.collection = JSON.stringify(collection);
         return true;
     },
     query: function() {
@@ -28,7 +28,7 @@ app.AppointmentStore = function() {
       collection = collection.filter(function(item){
         return !obj.equal(item);
       });
-      // localStorage.collection = JSON.stringify(collection);
+      localStorage.collection = JSON.stringify(collection);
       return;
     }
   };

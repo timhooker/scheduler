@@ -16,13 +16,12 @@ $(function () {
     listingsPageEvents();
   };
   app.viewAppointment = function () {
-    app.aptManager = app.AppointmentStore();
 
     var appointments = app.aptManager.query();
     var pageID = 'appt-view';
 
     $('.wrapper').html(
-      app.views['appt-view']({ appointments: appointments, pageID: pageID }) );
+      app.views['appt-view']({ appointment: appointments[0], pageID: pageID }) );
 
     navButtons();
   };
