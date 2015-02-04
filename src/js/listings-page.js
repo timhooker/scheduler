@@ -2,7 +2,7 @@ function listingsPageEvents() {
 
   $('.appt').on('click', '.appt-details', function() {
     // clicking on appt brings up the view page
-    showSection('appt-view');
+    app.viewAppointment();
     navButtons();
   });
 

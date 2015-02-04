@@ -1,4 +1,6 @@
 $(function() {
-  app.appointments = app.AppointmentStore();
+
+  // display appointments we have currently
+  app.listAppointments();
 
 });

@@ -7,8 +7,6 @@ $(function () {
     // For each one of those scripts, we want to get it, and remove it
     // from the DOM. (No use keeping useless scripts in the document!)
     var elem = $(this).remove();
-    console.log(elem);
-    console.log(elem.attr('id'));
     // Now, elem is the current <script type="text/html"> element.
     //
     // Add a property to our views object with the same name as the
@@ -21,6 +19,6 @@ $(function () {
     //
     // Where foo is the compiled template that was defined in the script
     // tag whose id was foo... Hmm...
-    app.views[elem.attr('id')] = _.template(elem.html(), { 'variable': 'm' });
+    app.views[elem.attr('id')] = _.template(elem.html());
   });
 });

@@ -13,78 +13,44 @@
   </div>
 </body>
 <script type="type/html" id="appt-listing">
-  <header>
-    <nav class="appt-nav">
-      <h2>DOCKET</h2>
-      <button class="add-btn">+</button>
-    </nav>
-  </header>
+  <div id='<%= pageID %>' class="page">
+    <header>
+      <nav class="appt-nav">
+        <h2>DOCKET</h2>
+        <button class="add-btn">+</button>
+      </nav>
+    </header>
 
-    <div class="appt-content">
-      <ul class="appt-list">
-        <% app.appointments.each(function(appt){ %>
-          <li class="appt">
-            <div class="appt-details">
-              <h3 class="appt-listing-time"> </h3>
-              <h3 class="appt-listing-title">Coding with Tim</h3>
-              <p class="appt-listing-address">
-              201 West Main St., Durham, NC 27701
-                <span class="appt-address-icon">p</span>
-              </p>
-            </div>
+      <div class="appt-content">
+        <ul class="appt-list">
+          <% appointments.forEach(function(appt){ %>
+            <li class="appt">
+              <div class="appt-details">
+                <h3 class="appt-listing-time"><%- appt.time %></h3>
+                <h3 class="appt-listing-title"><%- appt.title %></h3>
+                <p class="appt-listing-address">
+                <%- appt.address %>
+                  <span class="appt-address-icon">p</span>
+                </p>
+              </div>
 
-            <div class="appt-delete">
-              <h3>Are You Sure?</h3>
-              <button class="appt-confirm-delete">Delete</button>
-              <button class="appt-cancel-delete">Cancel</button>
-            </div>
-            <button class="appt-delete-btn">X</button>
-          </li>
-        <% }) %>
+              <div class="appt-delete">
+                <h3>Are You Sure?</h3>
+                <button class="appt-confirm-delete">Delete</button>
+                <button class="appt-cancel-delete">Cancel</button>
+              </div>
+              <button class="appt-delete-btn">X</button>
+            </li>
+          <% }) %>
 
-        // <li class="appt">
-        //   <div class="appt-details">
-        //     <h3 class="appt-listing-time">5pm</h3>
-        //     <h3 class="appt-listing-title">Coding with Tim</h3>
-        //     <p class="appt-listing-address">
-        //     201 West Main St., Durham, NC 27701
-        //       <span class="appt-address-icon">p</span>
-        //     </p>
-        //   </div>
-        //
-        //   <div class="appt-delete">
-        //     <h3>Are You Sure?</h3>
-        //     <button class="appt-confirm-delete">Delete</button>
-        //     <button class="appt-cancel-delete">Cancel</button>
-        //   </div>
-        //   <button class="appt-delete-btn">X</button>
-        // </li>
-        //
-        // <li class="appt">
-        //   <div class="appt-details">
-        //     <h3 class="appt-listing-time">5pm</h3>
-        //     <h3 class="appt-listing-title">Coding with Tim</h3>
-        //     <p class="appt-listing-address">
-        //     201 West Main St., Durham, NC 27701
-        //       <span class="appt-address-icon">p</span>
-        //     </p>
-        //   </div>
-        //
-        //   <div class="appt-delete">
-        //     <h3>Are You Sure?</h3>
-        //     <button class="appt-confirm-delete">Delete</button>
-        //     <button class="appt-cancel-delete">Cancel</button>
-        //   </div>
-        //   <button class="appt-delete-btn">X</button>
-        // </li>
+        </ul>
 
+      </div>
+  </div>
+</script>
 
-      </ul>
-
-    </div>
-  </script>
-
-  <script type="type/html" id="appt-edit">
+<script type="type/html" id="appt-edit">
+<div id='<%= pageID %>' class="page">
   <header>
     <nav class="appt-nav">
       <h1>Appts</h1>
@@ -95,37 +61,36 @@
 
       <label>
         Title
-        <input class="appt-edit-title">
+        <input class="appt-edit-title" placeholder="<%- appointment.title %>">
       </label>
 
       <label>
         Date
-        <input class="appt-edit-date">
-
+        <input class="appt-edit-date" placeholder="<%- appointment.date %>">
       </label>
 
       <label>
         Time
-        <input class="appt-edit-time">
+        <input class="appt-edit-time" placeholder="<%- appointment.time %>">
       </label>
 
       <label>
         Street
-        <input class="appt-edit-street">
+        <input class="appt-edit-street" placeholder="<%- appointment.street %>">
       </label>
 
       <label>
         City/State
-        <input class="appt-edit-city-state">
+        <input class="appt-edit-city-state" placeholder="<%- appointment.cityState %>">
       </label>
 
       <button class="appt-save-btn">Save</button>
     </div>
-
+</div>
   </script>
 
   <script type="type/html" id="appt-view">
-
+  <div id='<%= pageID %>' class="page">
     <header>
       <nav class="appt-nav">
         <h1>Appts</h1>
@@ -146,6 +111,7 @@
       </div>
 
     </div>
+  </div>
 
   </script>
 
