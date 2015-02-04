@@ -2,34 +2,45 @@
 app.AppointmentStore = function() {
   //TODO: Create Store
   //
-  var sampleAppointment = {
-    title: 'Working Out with Bernard',
-    date: 'March 3rd',
-    time: '1pm',
-    street: '555 Blackwell',
-    cityState: 'Durham, NC',
-    address: '555 Blackwell, Durham NC',
-    aptId: 8765309
-  };
+  var sampleAppt = {
+    title: 'samples'
+  }
 
-  var collection = [];
+  var collection = JSON.parse(localStorage.getItem('collection')) || [sampleAppt];
+
   //Should have at least these elements:
+  var storeLocal = function () {
+    localStorage.setItem('collection', JSON.stringify(collection));
+  };
 
   var self = {
     add: function(obj) {
-        collection.push(obj);
-        localStorage.collection = JSON.stringify(collection);
-        return true;
+      collection.push(obj);
+      return true;
     },
     query: function() {
+
       return collection;
     },
     remove: function(obj) {
       collection = collection.filter(function(item){
         return !obj.equal(item);
       });
-      localStorage.collection = JSON.stringify(collection);
+      storeLocal();
       return;
+    },
+    findById: function(objId) {
+      // returns the index of the appointment by ID
+      var objIndex;
+      collection.forEach(function(apt, i){
+         if (Number(objId) === apt.aptId) {
+           objIndex = i;
+         }
+       });
+       return objIndex;
+    },
+    clear: function() {
+      localStorage.clear();
     }
   };
   return self;

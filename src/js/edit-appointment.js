@@ -1,5 +1,4 @@
 app.editAppointment = function() {
-  app.aptManager = app.AppointmentStore();
 
   var appointments = app.aptManager.query();
   var pageID = 'appt-edit';
@@ -20,7 +19,7 @@ app.editAppointment = function() {
     var appt = createApptFromForm();
     app.aptManager.add(appt);
     resetApptForm();
-    
+
 
     return false;
   });

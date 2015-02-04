@@ -2,20 +2,22 @@ $(function() {
 
   // display appointments we have currently
   app.manager = app.PageManager();
+  app.aptManager = app.AppointmentStore();
+
   app.manager.registerPage('listings', function() {
     var pageID = 'appt-listing';
 
     $('.wrapper').html(
-      app.views['appt-listing']({ appointments: appointments, pageID: pageID }) );
+      app.views['appt-listing']({ appointments: app.aptManager.query(), pageID: pageID }) );
 
     navButtons();
     listingsPageEvents();
   });
-  app.manager.registerPage('view', function() {
+  app.manager.registerPage('view', function(appt) {
     var pageID = 'appt-view';
 
     $('.wrapper').html(
-      app.views['appt-view']({ appointment: appointments[0], pageID: pageID }) );
+      app.views['appt-view']({ appointment: appt, pageID: pageID }) );
 
     navButtons();
   });
@@ -28,9 +30,8 @@ $(function() {
     navButtons();
   });
 
-  app.aptManager = app.AppointmentStore();
   var appointments = app.aptManager.query();
-  app.manager.goTo('listings', appointments);
+  app.manager.goTo('listings');
 
 
 });

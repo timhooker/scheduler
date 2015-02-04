@@ -20,17 +20,17 @@ app.PageManager = function (rootElement) {
     //registerPage(name, callback)
     //goToPage(name);
 
-  app.pages = {};
+  var pages = {};
 
   return {
     registerPage: function (name, callback) {
 
       // Where do we store the templates??
-      app.pages[name] = callback;
+      pages[name] = callback;
     },
 
     goTo: function(name, data) {
-      app.pages[name]();
+      pages[name](data);
     }
   };
 };
