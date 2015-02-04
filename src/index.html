@@ -24,7 +24,7 @@
       <div class="appt-content">
         <ul class="appt-list">
           <% appointments.forEach(function(appt){ %>
-            <li class="appt">
+            <li class="appt" data-id='<%- appt.aptId %>'>
               <div class="appt-details">
                 <h3 class="appt-listing-time"><%- appt.time %></h3>
                 <h3 class="appt-listing-title"><%- appt.title %></h3>
@@ -101,10 +101,10 @@
 
     <div class="appt-view-content">
       <div class="appt-view-detail">
-        <h3 class="appt-title">Title</h3>
-        <p class="appt-date">Date</p>
-        <p class="appt-time">Time</p>
-        <p class="appt-address">Address</p>
+        <h3 class="appt-title"><%- appointment.title %></h3>
+        <p class="appt-date"><%- appointment.date %></p>
+        <p class="appt-time"><%- appointment.time %></p>
+        <p class="appt-address"><%- appointment.address %></p>
       </div>
       <div class="appt-view-weather">
 
