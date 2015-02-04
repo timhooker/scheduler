@@ -2,7 +2,15 @@
 app.AppointmentStore = function() {
   //TODO: Create Store
   //
-  var collection = [];
+  var sampleAppointment = {
+    title: 'Working Out with Bernard',
+    date: 'March 3rd',
+    time: '1pm',
+    street: '555 Blackwell',
+    cityState: 'Durham, NC',
+    address: '555 Blackwell, Durham NC'
+  }
+  var collection = [sampleAppointment];
   //Should have at least these elements:
 
   var self = {
