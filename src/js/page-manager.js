@@ -16,7 +16,7 @@
 app.PageManager = function (rootElement) {
     //TODO: implement an obect which makes changing pages
     //convenient and relatively easy
-    //
+
     //registerPage(name, callback)
     //goToPage(name);
 

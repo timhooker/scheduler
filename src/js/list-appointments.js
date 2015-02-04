@@ -2,9 +2,6 @@ $(function () {
   //TODO: manage all the list appts
 
   app.listAppointments = function () {
-    app.aptManager = app.AppointmentStore();
-    //
-    //
     var appointments = app.aptManager.query();
     // console.log('hey');
     var pageID = 'appt-listing';
