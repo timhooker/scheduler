@@ -20,12 +20,11 @@ app.AppointmentStore = function() {
     query: function() {
       return collection ;
     },
-    remove: function(obj) {
-      collection = collection.filter(function(item){
-        return !obj.equal(item);
-      });
+    remove: function(index) {
+      return collection.splice(index, 1);
+
       storeLocal();
-      return;
+      // return;
     },
     findById: function(objId) {
       // returns the index of the appointment by ID

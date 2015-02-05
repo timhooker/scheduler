@@ -2,6 +2,7 @@ app.editAppointment = function() {
 
   var appointments = app.aptManager.query();
   var pageID = 'appt-edit';
+  // console.log( appointments[0] );
 
   $('.wrapper').html(
     app.views['appt-edit']({ appointment: appointments[0] || {}, pageID: pageID }) );
@@ -18,6 +19,7 @@ app.editAppointment = function() {
     var appt = createApptFromForm();
     app.aptManager.add(appt);
     resetApptForm();
+
 
     return false;
   });
