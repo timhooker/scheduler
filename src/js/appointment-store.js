@@ -4,7 +4,7 @@ app.AppointmentStore = function() {
   //
   var sampleAppt = {
     title: 'samples'
-  }
+  };
 
   var collection = JSON.parse(localStorage.getItem('collection')) || [];
   //Should have at least these elements:
@@ -15,15 +15,16 @@ app.AppointmentStore = function() {
   var self = {
     add: function(obj) {
       collection.push(obj);
+      storeLocal();
       return true;
     },
     query: function() {
       return collection ;
     },
     remove: function(index) {
-      return collection.splice(index, 1);
-
+      collection = collection.splice(index, 1);
       storeLocal();
+      return;
       // return;
     },
     findById: function(objId) {
