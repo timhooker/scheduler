@@ -2,53 +2,34 @@
 app.AppointmentStore = function() {
   //TODO: Create Store
   //
-  var sampleAppt = {
-    title: 'samples'
-  }
-
-  var collection = JSON.parse(localStorage.getItem('collection')) || [];
-
-  //Should have at least these elements:
-  var storeLocal = function () {
-    localStorage.setItem('collection', JSON.stringify(collection));
+  var sampleAppointment = {
+    title: 'Working Out with Bernard',
+    date: 'March 3rd',
+    time: '1pm',
+    street: '555 Blackwell',
+    cityState: 'Durham, NC',
+    address: '555 Blackwell, Durham NC',
+    aptId: 8765309
   };
 
+  var collection = [sampleAppointment];
+  //Should have at least these elements:
+
   var self = {
-    add: function(obj, arrayIndex) {
-      console.log(arrayIndex);
-
-      if (arrayIndex >= 0) {
-        collection.splice(arrayIndex, 1, obj);
-      } else {
-        collection.push(obj);
-      }
-
+    add: function(obj) {
+      collection.push(obj);
+      localStorage.collection = JSON.stringify(collection);
       return true;
     },
     query: function() {
-
       return collection;
     },
-    remove: function(index) {
-      return collection.splice(index, 1);
-
-      storeLocal();
-      // return;
-    },
-    findById: function(objId) {
-      // returns the index of the appointment by ID
-      var objIndex;
-
-      collection.forEach(function(apt, i){
-         if (Number(objId) === apt.aptId) {
-           objIndex = i;
-         }
-       });
-
-       return objIndex;
-    },
-    clear: function() {
-      localStorage.clear();
+    remove: function(obj) {
+      collection = collection.filter(function(item){
+        return !obj.equal(item);
+      });
+      localStorage.collection = JSON.stringify(collection);
+      return;
     }
   };
   return self;

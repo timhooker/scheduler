@@ -15,7 +15,7 @@ $(function () {
   app.viewAppointment = function (aptId) {
 
     var appointments = app.aptManager.query();
-
+    console.log(aptId);
     var index = app.aptManager.findById(aptId);
     console.log(index);
 
