@@ -4,8 +4,8 @@
 
 $.getJSON('http://api.openweathermap.org/data/2.5/forecast?q=Durham,nc')
   .done(function (data) {
-    var K = (data.list[0].main.temp)
-    var temp = (K - 273.15)* 1.8000 + 32.00
+    var K = (data.list[0].main.temp);
+    var temp = (K - 273.15)* 1.8000 + 32.00;
     // var condition = ()
     console.log(temp);
     console.log(data);
@@ -17,8 +17,8 @@ $.getJSON('http://api.openweathermap.org/data/2.5/forecast?q=Durham,nc')
 
 $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Durham,NC')
   .done(function (data) {
-    var K = (data.main.temp)
-    var temp = (K - 273.15)* 1.8000 + 32.00
+    var K = (data.main.temp);
+    var temp = (K - 273.15)* 1.8000 + 32.00;
     // var condition = ()
     console.log(temp);
     console.log(data);
