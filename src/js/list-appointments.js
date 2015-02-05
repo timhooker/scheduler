@@ -10,7 +10,7 @@ $(function () {
       app.views['appt-listing']({ appointments: appointments, pageID: pageID }) );
 
     navButtons();
-    listingsPageEvents();
+    listingsPageButtons();
   };
   app.viewAppointment = function () {
 

@@ -7,5 +7,4 @@ app.viewAppointment = function() {
   navButtons();
   listingsPageEvents();
 
-
 };

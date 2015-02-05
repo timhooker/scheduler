@@ -7,7 +7,7 @@ function navButtons() {
   $('.appt-nav').on('click', '.back-btn', function() {
     app.listAppointments();
     navButtons();
-    listingsPageEvents();
+    listingsPageButtons();
   });
 
   $('.appt-nav').on('click', '.edit-btn', function() {

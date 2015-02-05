@@ -42,7 +42,6 @@
               <button class="appt-delete-btn">X</button>
             </li>
           <% }) %>
-
         </ul>
 
       </div>
@@ -100,7 +99,7 @@
     </header>
 
     <div class="appt-view-content">
-      <div class="appt-view-detail">
+      <div class="appt-view-detail" data-id='<%- m.appointment.aptId %>'>
         <h3 class="appt-title"><%- m.appointment.title %></h3>
         <p class="appt-date"><%- m.appointment.date %></p>
         <p class="appt-time"><%- m.appointment.time %></p>

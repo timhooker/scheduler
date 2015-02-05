@@ -4,7 +4,7 @@ app.editAppointment = function() {
   var pageID = 'appt-edit';
 
   $('.wrapper').html(
-    app.views['appt-edit']({ appointment: appointments[0], pageID: pageID }) );
+    app.views['appt-edit']({ appointment: appointments[0] || {}, pageID: pageID }) );
 
   navButtons();
 

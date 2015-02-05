@@ -6,7 +6,7 @@ app.AppointmentStore = function() {
     title: 'samples'
   }
 
-  var collection = JSON.parse(localStorage.getItem('collection')) || [sampleAppt];
+  var collection = JSON.parse(localStorage.getItem('collection')) || [];
   //Should have at least these elements:
   var storeLocal = function () {
     localStorage.setItem('collection', JSON.stringify(collection));
@@ -18,8 +18,7 @@ app.AppointmentStore = function() {
       return true;
     },
     query: function() {
-
-      return collection;
+      return collection ;
     },
     remove: function(obj) {
       collection = collection.filter(function(item){
@@ -43,7 +42,4 @@ app.AppointmentStore = function() {
     }
   };
   return self;
-  //add(appointment)
-  //removeById(appointmentId)
-  //query()
 };

@@ -1,4 +1,4 @@
-function listingsPageEvents() {
+function listingsPageButtons() {
 
   $('.appt').on('click', '.appt-details', function() {
     // clicking on appt brings up the view page
