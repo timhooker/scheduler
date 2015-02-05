@@ -7,18 +7,44 @@ app.PageManager = function (rootElement) {
 
   //Grabbing all our templates and storing them
 
+  var isHome = true;
 
-  var pages = {};
+  app.pages = {};
 
   return {
     registerPage: function (name, callback) {
 
       // Where do we store the templates??
-      pages[name] = callback;
+      app.pages[name] = callback;
     },
 
     goTo: function(name, data) {
-      pages[name](data);
+      app.pages[name](data);
+      var currentPage = $('.page').first();
+      var newPage = $('#appt-' + name);
+
+      if(!isHome) {
+        if (name === 'listing') {
+          newPage.addClass('previous');
+          // is there a way to only remove the second class?
+          setTimeout(function() {
+            newPage.removeClass('previous');
+            currentPage.addClass('inactive');
+            setTimeout(function() {
+              currentPage.remove();
+            }, 300);
+          }, 100);
+        } else {
+          setTimeout(function() {
+            newPage.removeClass('inactive');
+            currentPage.addClass('previous');
+            setTimeout(function() {
+              currentPage.remove();
+            }, 300);
+          }, 100);
+        }
+      }
+      isHome = false;
     }
   };
 };
