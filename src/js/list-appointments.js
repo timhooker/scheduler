@@ -12,13 +12,17 @@ $(function () {
     navButtons();
     listingsPageEvents();
   };
-  app.viewAppointment = function () {
+  app.viewAppointment = function (aptId) {
 
     var appointments = app.aptManager.query();
+
+    var index = app.aptManager.findById(aptId);
+    console.log(index);
+
     var pageID = 'appt-view';
 
     $('.wrapper').html(
-      app.views['appt-view']({ appointment: appointments[0], pageID: pageID }) );
+      app.views['appt-view']({ appointment: appointments[index], pageID: pageID }) );
 
     navButtons();
   };

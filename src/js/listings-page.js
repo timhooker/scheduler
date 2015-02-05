@@ -2,8 +2,13 @@ function listingsPageEvents() {
 
   $('.appt').on('click', '.appt-details', function() {
     // clicking on appt brings up the view page
-    app.viewAppointment();
-    navButtons();
+    var details = $(this);
+    var appt = details.closest('.appt');
+    var aptId = appt.data('id');
+    // console.log(aptId);
+
+    app.viewAppointment(aptId);
+    // navButtons();
   });
 
   $('.appt').on('click', '.appt-delete-btn', function() {
@@ -18,7 +23,7 @@ function listingsPageEvents() {
     confirmDelete.children('.appt-confirm-delete').on('click', function() {
       appt.remove();
       var index = app.aptManager.findById(aptId);
-      console.log(index);
+      // console.log(index);
       app.aptManager.remove(index);
     });
     // if cancelled, remove
