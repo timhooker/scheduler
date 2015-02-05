@@ -117,7 +117,21 @@
 
 .appt-delete {
   display: none;
+  position: absolute;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background-color: #eee;
+  padding: 0 1em;
+  text-transform: uppercase;
 }
+
+.appt-confirm-delete,
+.appt-cancel-delete {
+  padding: .5em;
+}
+
 
 .appt-delete-btn {
   position: absolute;
@@ -138,15 +152,66 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
-  left: 0%;
+  min-width: 100%;
   max-width: 100%;
-  transition: left 1s ease-in;
+  transition: left .3s ease-in;
 }
 .inactive {
   left: 100%;
+
 }
 
 .previous {
   left: -100%;
+}
+
+.active {
+  left: 0;
+}
+
+.appt-listing-time {
+  float: left;
+  margin-right: 8%;
+}
+
+header {
+  padding: 1em;
+  text-align: center;
+  overflow: auto;
+}
+
+#appt-listing {
+  width: 100%;
+  min-height: 100%;
+  label {
+    display: block;
+  }
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+.edit-btn,
+.back-btn {
+  display: block;
+  position: absolute;
+  top: 42%;
+  left: 4%;
+  transform: translate(0%, -50%);
+  font-size: 2.5em;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+.edit-btn {
+  left: 90%;
 }

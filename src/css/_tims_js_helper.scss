@@ -47,26 +47,10 @@ header {
   bottom: 0;
   background-color: #eee;
   padding: 0 1em;
+  text-transform: uppercase;
 }
 
-.page {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0%;
-  max-width: 100%;
-  transition: left .3s ease-in;
-}
-.inactive {
-  left: 100%;
-}
-
-.previous {
-  left: -100%;
-}
-
-.appt-listing-time {
-  float: left;
-  margin-right: 8%;
+.appt-confirm-delete,
+.appt-cancel-delete {
+  padding: .5em;
 }

@@ -13,7 +13,7 @@
   </div>
 </body>
 <script type="type/html" id="appt-listing">
-  <div id='<%= m.pageID %>' class="page">
+  <div id='<%= m.pageID %>' class="page previous">
     <header>
       <nav class="appt-nav">
         <h2>DOCKET</h2>
@@ -48,48 +48,48 @@
   </div>
 </script>
 
-<script type="type/html" id="appt-edit">
-<div id='<%= m.pageID %>' class="page">
-  <header>
-    <nav class="appt-nav">
-      <h1>Appts</h1>
-      <button class="back-btn"><</button>
-    </nav>
-  </header>
-    <form class="appt-edit-content">
+  <script type="type/html" id="appt-edit">
+    <div id='<%= m.pageID %>' class="page inactive">
+      <header>
+        <nav class="appt-nav">
+          <h1>Appts</h1>
+          <button class="back-btn"><</button>
+        </nav>
+      </header>
+        <form class="appt-edit-content">
 
-      <label>
-        Title
-        <input class="appt-edit-title" placeholder="<%- m.appointment.title %>">
-      </label>
+          <label>
+            Title
+            <input class="appt-edit-title" placeholder="<%- m.appointment.title %>">
+          </label>
 
-      <label>
-        Date
-        <input class="appt-edit-date" placeholder="<%- m.appointment.date %>">
-      </label>
+          <label>
+            Date
+            <input class="appt-edit-date" placeholder="<%- m.appointment.date %>">
+          </label>
 
-      <label>
-        Time
-        <input class="appt-edit-time" placeholder="<%- m.appointment.time %>">
-      </label>
+          <label>
+            Time
+            <input class="appt-edit-time" placeholder="<%- m.appointment.time %>">
+          </label>
 
-      <label>
-        Street
-        <input class="appt-edit-street" placeholder="<%- m.appointment.street %>">
-      </label>
+          <label>
+            Street
+            <input class="appt-edit-street" placeholder="<%- m.appointment.street %>">
+          </label>
 
-      <label>
-        City/State
-        <input class="appt-edit-city-state" placeholder="<%- m.appointment.cityState %>">
-      </label>
+          <label>
+            City/State
+            <input class="appt-edit-city-state" placeholder="<%- m.appointment.cityState %>">
+          </label>
 
-      <button class="appt-save-btn">Save</button>
-    </form>
-</div>
+          <button class="appt-save-btn">Save</button>
+        </form>
+    </div>
   </script>
 
   <script type="type/html" id="appt-view">
-  <div id='<%= m.pageID %>' class="page">
+  <div id='<%= m.pageID %>' class="page inactive">
     <header>
       <nav class="appt-nav">
         <h1>Appts</h1>
