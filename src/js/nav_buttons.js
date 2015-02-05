@@ -1,18 +1,27 @@
 function navButtons() {
   $('.appt-nav').on('click', '.add-btn', function() {
     app.editAppointment();
-    navButtons();
+    // navButtons();
   });
 
   $('.appt-nav').on('click', '.back-btn', function() {
     app.listAppointments();
-    navButtons();
+    // navButtons();
     listingsPageEvents();
   });
 
   $('.appt-nav').on('click', '.edit-btn', function() {
-    app.editAppointment();
-    navButtons();
+
+    var aptId = $('.page').data('id');
+    // var btn = $(this);
+    // var appt = btn.closest('.appt');
+    // console.log(aptId);
+    // var aptId = appt.data('id');
+    // console.log(aptId);
+    var apptIndex = app.aptManager.findById(aptId);
+    // console.log(apptIndex);
+    app.editAppointment(apptIndex);
+    // navButtons();
   });
 }
 
