@@ -10,6 +10,10 @@ function navButtons() {
   });
 
   $('.appt-nav').on('click', '.edit-btn', function() {
-    app.manager.goTo('edit', {});
+    var aptId = $('.page').data('id');
+    var apptIndex = app.aptManager.findById(aptId);
+    var appointments = app.aptManager.query();
+
+    app.manager.goTo('edit', appointments[apptIndex]);
   });
 }

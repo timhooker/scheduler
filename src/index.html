@@ -12,41 +12,38 @@
   <div class="wrapper">
   </div>
 </body>
-<script type="type/html" id="appt-listing">
-  <div id='<%= m.pageID %>' class="page previous">
-    <header>
-      <nav class="appt-nav">
-        <h2>DOCKET</h2>
-        <button class="add-btn">+</button>
-      </nav>
-    </header>
-
-      <div class="appt-content">
-        <ul class="appt-list">
-          <% m.appointments.forEach(function(appt){ %>
-            <li class="appt" data-id='<%- appt.aptId %>'>
-              <div class="appt-details">
-                <h3 class="appt-listing-time"><%- appt.time %></h3>
-                <h3 class="appt-listing-title"><%- appt.title %></h3>
-                <p class="appt-listing-address">
-                <%- appt.address %>
-                  <span class="appt-address-icon">p</span>
-                </p>
-              </div>
-
-              <div class="appt-delete">
-                <h3>Are You Sure?</h3>
-                <button class="appt-confirm-delete">Delete</button>
-                <button class="appt-cancel-delete">Cancel</button>
-              </div>
-              <button class="appt-delete-btn">X</button>
-            </li>
-          <% }) %>
-        </ul>
-
-      </div>
-  </div>
-</script>
+  <script type="type/html" id="appt-listing">
+    <div id='<%= m.pageID %>' class="page previous">
+      <header>
+        <nav class="appt-nav">
+          <h2>DOCKET</h2>
+          <button class="add-btn">+</button>
+        </nav>
+      </header>
+        <div class="appt-content">
+          <ul class="appt-list">
+            <% m.appointments.forEach(function(appt){ %>
+              <li class="appt" data-id='<%- appt.aptId %>'>
+                <div class="appt-details">
+                  <h3 class="appt-listing-time"><%- appt.time %></h3>
+                  <h3 class="appt-listing-title"><%- appt.title %></h3>
+                  <p class="appt-listing-address">
+                  <%- appt.address %>
+                    <span class="appt-address-icon">p</span>
+                  </p>
+                </div>
+                <div class="appt-delete">
+                  <h3>Are You Sure?</h3>
+                  <button class="appt-confirm-delete">Delete</button>
+                  <button class="appt-cancel-delete">Cancel</button>
+                </div>
+                <button class="appt-delete-btn">X</button>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+    </div>
+  </script>
 
   <script type="type/html" id="appt-edit">
     <div id='<%= m.pageID %>' class="page inactive">
@@ -57,39 +54,33 @@
         </nav>
       </header>
         <form class="appt-edit-content">
-
           <label>
             Title
-            <input class="appt-edit-title" placeholder="<%- m.appointment.title %>">
+            <input class="appt-edit-title" value="<%- m.appointment.title %>">
           </label>
-
           <label>
             Date
-            <input class="appt-edit-date" placeholder="<%- m.appointment.date %>">
+            <input class="appt-edit-date" value="<%- m.appointment.date %>">
           </label>
-
           <label>
             Time
-            <input class="appt-edit-time" placeholder="<%- m.appointment.time %>">
+            <input class="appt-edit-time" value="<%- m.appointment.time %>">
           </label>
-
           <label>
             Street
-            <input class="appt-edit-street" placeholder="<%- m.appointment.street %>">
+            <input class="appt-edit-street" value="<%- m.appointment.street %>">
           </label>
-
           <label>
             City/State
-            <input class="appt-edit-city-state" placeholder="<%- m.appointment.cityState %>">
+            <input class="appt-edit-city-state" value="<%- m.appointment.cityState %>">
           </label>
-
           <button class="appt-save-btn">Save</button>
         </form>
     </div>
   </script>
 
   <script type="type/html" id="appt-view">
-    <div id='<%= m.pageID %>' class="page inactive">
+    <div id='<%= m.pageID %>' class="page inactive" data-id='<%- m.appointment.aptId %>'>
       <header>
         <nav class="appt-nav">
           <h1>Appts</h1>
@@ -97,7 +88,6 @@
           <button class="edit-btn">e</button>
         </nav>
       </header>
-
       <div class="appt-view-content">
         <div class="appt-view-detail" data-id='<%- m.appointment.aptId %>'>
           <h3 class="appt-title"><%- m.appointment.title %></h3>
@@ -106,12 +96,9 @@
           <p class="appt-address"><%- m.appointment.address %></p>
         </div>
         <div class="appt-view-weather">
-
         </div>
-
       </div>
     </div>
-
   </script>
 
   <script src="js/vendor.js"></script>

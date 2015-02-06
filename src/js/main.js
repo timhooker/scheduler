@@ -22,6 +22,9 @@ $(function() {
 
     app.manager.registerPage('edit', function(appt) {
       var pageID = 'appt-edit';
+      var appointments = app.aptManager.query();
+      var currentAptId = $('.page').data('id');
+      var apptIndex = app.aptManager.findById(currentAptId);
 
       $('.wrapper').append(
         app.views['appt-edit']({ appointment: appt, pageID: pageID }) );
@@ -44,6 +47,18 @@ $(function() {
         return false;
       });
 
+      // var apptTitle = appt.title;
+      // var apptDate = appt.date;
+      // var apptTime = appt.time;
+      // var apptStreet = appt.street;
+      // var apptCityState = appt.cityState;
+      //
+      // $('.appt-edit-title').val(apptTitle);
+      // $('.appt-edit-date').val(apptDate);
+      // $('.appt-edit-time').val(apptTime);
+      // $('.appt-edit-street').val(apptStreet);
+      // $('.appt-edit-city-state').val(apptCityState);
+
       // Creates newAppt Object
       // Passes newAppt to app.Appointment function
       // Returns object
@@ -57,7 +72,7 @@ $(function() {
         };
         var newApt;
         try {
-          newApt = app.Appointment(newAppt);
+          newApt = app.Appointment(newAppt, currentAptId);
         } catch(e) {
           // show the catch error
           console.log(e);

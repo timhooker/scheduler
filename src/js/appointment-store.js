@@ -2,7 +2,6 @@
 app.AppointmentStore = function() {
   //TODO: Create Store
   //
-
   var collection = JSON.parse(localStorage.getItem('collection')) || [];
   //Should have at least these elements:
   var storeLocal = function () {
@@ -10,9 +9,14 @@ app.AppointmentStore = function() {
   };
 
   var self = {
-    add: function(obj) {
-      collection.push(obj);
+    add: function(obj, arrayIndex) {
+      if (arrayIndex >= 0) {
+        collection.splice(arrayIndex, 1, obj);
+      } else {
+        collection.push(obj);
+      }
       storeLocal();
+
       return true;
     },
     query: function() {
@@ -21,17 +25,19 @@ app.AppointmentStore = function() {
     remove: function(index) {
       collection = collection.splice(index, 1);
       storeLocal();
-      return;
-      // return;
+
+      return collection;
     },
     findById: function(objId) {
       // returns the index of the appointment by ID
       var objIndex;
+
       collection.forEach(function(apt, i){
          if (Number(objId) === apt.aptId) {
            objIndex = i;
          }
        });
+
        return objIndex;
     },
     clear: function() {
