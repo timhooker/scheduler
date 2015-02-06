@@ -55,7 +55,7 @@ $(function() {
       // Add appt to datastore
       $('.appt-edit-content').submit(function() {
         var appt = createApptFromForm();
-        // var apptIndex = 
+        // var apptIndex =
         if (appt) {
           app.aptManager.add(appt, apptIndex);
         }
@@ -70,7 +70,9 @@ $(function() {
           date: $('.appt-edit-date').val(),
           time: $('.appt-edit-time').val(),
           street: $('.appt-edit-street').val(),
-          cityState: $('.appt-edit-city-state').val()
+          city: $('.appt-edit-city').val(),
+          state: $('.appt-edit-state').val()
+          // city: $('.appt-edit-city-state').val()
         };
         var newApt;
         try {
