@@ -1,0 +1,19 @@
+.weather-container {
+  color: black;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  margin-top: 64px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.temp {
+  position: absolute;
+  font-weight: 300;
+  font-size: 5em;
+  top: .5em;
+  left: .5em;
+}

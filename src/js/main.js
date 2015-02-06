@@ -12,6 +12,16 @@ $(function() {
       listingsPageButtons();
     });
 
+    app.manager.registerPage('weather', function() {
+
+      var pageID = 'appt-weather';
+
+      $('.wrapper').append(
+        app.views['appt-weather']({ pageID: pageID }) );
+
+      navButtons();
+    });
+
     app.manager.registerPage('view', function(appt) {
 
       var pageID = 'appt-view';
@@ -45,8 +55,9 @@ $(function() {
       // Add appt to datastore
       $('.appt-edit-content').submit(function() {
         var appt = createApptFromForm();
+        // var apptIndex = 
         if (appt) {
-          app.aptManager.add(appt);
+          app.aptManager.add(appt, apptIndex);
         }
         resetApptForm();
 
