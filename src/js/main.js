@@ -2,6 +2,7 @@ $(function() {
 
   app.registerPages = function() {
     app.manager.registerPage('listing', function() {
+
       var pageID = 'appt-listing';
 
       $('.wrapper').append(
@@ -12,8 +13,8 @@ $(function() {
     });
 
     app.manager.registerPage('view', function(appt) {
-      var pageID = 'appt-view';
 
+      var pageID = 'appt-view';
       $('.wrapper').append(
         app.views['appt-view']({ appointment: appt, pageID: pageID }) );
 
@@ -21,11 +22,11 @@ $(function() {
     });
 
     app.manager.registerPage('edit', function(appt) {
+
       var pageID = 'appt-edit';
       var appointments = app.aptManager.query();
       var currentAptId = $('.page').data('id');
       var apptIndex = app.aptManager.findById(currentAptId);
-      console.log(appt);
       $('.wrapper').append(
         app.views['appt-edit']({ appointment: appt, pageID: pageID }) );
 

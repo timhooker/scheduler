@@ -5,6 +5,7 @@ function navButtons() {
 
   $('.appt-nav').on('click', '.back-btn', function() {
     app.manager.goTo('listing');
+    $('.appt-nav').off('click', '.back-btn');
   });
 
   $('.appt-nav').on('click', '.edit-btn', function() {
@@ -13,5 +14,7 @@ function navButtons() {
     var appointments = app.aptManager.query();
 
     app.manager.goTo('edit', appointments[apptIndex]);
+    $('.appt-nav').off('click', '.edit-btn');
+
   });
 }
