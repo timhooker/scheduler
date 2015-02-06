@@ -31,14 +31,8 @@ $(function() {
         app.views['appt-edit']({ appointment: appt, pageID: pageID }) );
 
       navButtons();
-      $('.appt-edit-time').timepicker();
-      $('.appt-edit-date').pickadate({
-        today: '',
-        close: '',
-        onSet: function(context) {
-          console.log('Just set stuff:', context);
-        }
-      });
+      $('.appt-edit-time').pickatime();
+      $('.appt-edit-date').pickadate();
 
       // Give focus to the first input on load
       $('.appt-edit-title').focus();
@@ -49,9 +43,9 @@ $(function() {
       $('.appt-edit-content').submit(function() {
         var appt = createApptFromForm();
         if (appt) {
-          app.aptManager.add(appt);
+          app.aptManager.add(appt, currentAptId);
+          resetApptForm();
         }
-        resetApptForm();
 
         return false;
       });
@@ -94,7 +88,6 @@ $(function() {
 
   // var appointments = app.aptManager.query();
   app.manager.goTo('listing');
-  app.isHome = false;
 
 
 
