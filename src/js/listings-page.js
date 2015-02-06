@@ -4,7 +4,7 @@ function listingsPageButtons() {
     // clicking on appt brings up the view page
     var aptListing = $(this);
     // find the ID of the object
-    var aptId = aptListing.closest('.appt').data('id');
+    var aptId = aptListing.closest('.appt');
     // find the index of the object
     var aptIndex = app.aptManager.findById(aptId);
     // get the object store
@@ -25,6 +25,7 @@ function listingsPageButtons() {
     confirmDelete.children('.appt-confirm-delete').on('click', function() {
       appt.remove();
       var index = app.aptManager.findById(aptId);
+      console.log(index);
       app.aptManager.remove(index);
     });
     // if cancelled, remove

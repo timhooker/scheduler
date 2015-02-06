@@ -20,10 +20,10 @@ app.AppointmentStore = function() {
       return true;
     },
     query: function() {
-      return collection ;
+      return collection;
     },
     remove: function(index) {
-      collection = collection.splice(index, 1);
+      collection.splice(index, 1);
       storeLocal();
 
       return collection;

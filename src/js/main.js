@@ -30,9 +30,14 @@ $(function() {
         app.views['appt-edit']({ appointment: appt, pageID: pageID }) );
 
       navButtons();
+      $('.appt-edit-time').timepicker();
+      $('.appt-edit-date').pickadate({
+        today: '',
+        close: ''
+      });
 
       // Give focus to the first input on load
-      $('.appt-edit-content .appt-edit-title').focus();
+      $('.appt-edit-title').focus();
 
       // Add Event Listener to Form
       // Create appt variable from createApptFromForm function
@@ -47,21 +52,6 @@ $(function() {
         return false;
       });
 
-      // var apptTitle = appt.title;
-      // var apptDate = appt.date;
-      // var apptTime = appt.time;
-      // var apptStreet = appt.street;
-      // var apptCityState = appt.cityState;
-      //
-      // $('.appt-edit-title').val(apptTitle);
-      // $('.appt-edit-date').val(apptDate);
-      // $('.appt-edit-time').val(apptTime);
-      // $('.appt-edit-street').val(apptStreet);
-      // $('.appt-edit-city-state').val(apptCityState);
-
-      // Creates newAppt Object
-      // Passes newAppt to app.Appointment function
-      // Returns object
       function createApptFromForm() {
         var newAppt = {
           title: $('.appt-edit-title').val(),
