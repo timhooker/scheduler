@@ -25,7 +25,7 @@ $(function() {
       var appointments = app.aptManager.query();
       var currentAptId = $('.page').data('id');
       var apptIndex = app.aptManager.findById(currentAptId);
-
+      console.log(appt);
       $('.wrapper').append(
         app.views['appt-edit']({ appointment: appt, pageID: pageID }) );
 

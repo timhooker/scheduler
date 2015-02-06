@@ -9,9 +9,8 @@ function listingsPageButtons() {
     var aptIndex = app.aptManager.findById(aptId);
     // get the object store
     var appointments = app.aptManager.query();
-    console.log(appointments);
     // show the appropriate page
-    app.manager.goTo('view', 0);
+    app.manager.goTo('view', appointments[aptIndex]);
   });
 
   $('.appt').on('click', '.appt-delete-btn', function() {
