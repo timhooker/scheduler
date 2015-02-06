@@ -12,6 +12,16 @@ $(function() {
       listingsPageButtons();
     });
 
+    app.manager.registerPage('weather', function() {
+
+      var pageID = 'appt-weather';
+
+      $('.wrapper').append(
+        app.views['appt-weather']({ pageID: pageID }) );
+
+      navButtons();
+    });
+
     app.manager.registerPage('view', function(appt) {
 
       var pageID = 'appt-view';
@@ -40,15 +50,39 @@ $(function() {
       // Add Event Listener to Form
       // Create appt variable from createApptFromForm function
       // Add appt to datastore
-      $('.appt-edit-content').submit(function() {
-        var appt = createApptFromForm();
-        if (appt) {
-          app.aptManager.add(appt, currentAptId);
-          resetApptForm();
+      $('.appt-edit-content').isHappy({
+
+        fields: {
+        // reference the field you're talking about, probably by `id`
+        // but you could certainly do $('[name=name]') as well.
+          '.appt-edit-title': {
+            required: true,
+            message: 'This event needs a title'
+          },
+          '.appt-edit-date': {
+            required: true,
+            message: 'A date is important for record keeping'
+          },
+          '.appt-edit-time': {
+            required: true,
+            message: 'Let\'s add a time so you\'re not late'
+          }
+
         }
+      });
+
+      $('.appt-edit-content').on('submit', function() {
+        var appt = createApptFromForm();
+        // var apptIndex =
+        if (appt) {
+          app.aptManager.add(appt, apptIndex);
+        }
+        resetApptForm();
 
         return false;
       });
+
+
 
       function createApptFromForm() {
         var newAppt = {

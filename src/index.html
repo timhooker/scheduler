@@ -19,6 +19,7 @@
         <nav class="appt-nav">
           <h2>DOCKET</h2>
           <button class="add-btn">+</button>
+          <button class="weather-btn">W</button>
         </nav>
       </header>
         <div class="appt-content">
@@ -46,6 +47,20 @@
     </div>
   </script>
 
+  <script type="type/html" id="appt-weather">
+
+    <div id='<%= m.pageID %>' class="page inactive">
+      <header>
+        <nav class="appt-nav">
+          <h1>Weather</h1>
+          <button class="back-btn"><</button>
+        </nav>
+      </header>
+      <div class="weather-container"></div>
+    </div>
+
+  </script>
+
   <script type="type/html" id="appt-edit">
     <div id='<%= m.pageID %>' class="page inactive">
       <header>
@@ -54,10 +69,10 @@
           <button class="back-btn"><</button>
         </nav>
       </header>
-        <form class="appt-edit-content">
+        <form class="appt-edit-content" data-parsley-validate>
           <label>
             Title
-            <input class="appt-edit-title" value="<%- m.appointment.title %>">
+            <input class="appt-edit-title" value="<%- m.appointment.title %>" data-parsley-validate>
           </label>
 
           <label>Date</label>
@@ -65,7 +80,7 @@
 
           <label>Time</label>
           <input class="appt-edit-time" value="<%- m.appointment.time %>">
-          
+
           <label>
             Street
             <input class="appt-edit-street" value="<%- m.appointment.street %>">
