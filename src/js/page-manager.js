@@ -7,7 +7,7 @@ app.PageManager = function (rootElement) {
 
   //Grabbing all our templates and storing them
 
-  var isPageLoad = true;
+  app.isPageLoad = true;
 
   app.pages = {};
 
@@ -19,22 +19,22 @@ app.PageManager = function (rootElement) {
     },
 
     goTo: function(name, data) {
+      var currentPage = $('.page').first();
       app.pages[name](data);
       var newPage = $('#appt-' + name);
 
-      if(!isPageLoad) {
+      if(!app.isPageLoad) {
           // is there a way to only remove the second class?
         setTimeout(function() {
-          var currentPage = $('.page').first();
           currentPage.removeClass('active');
           newPage.addClass('active');
           setTimeout(function() {
             $('.page').first().remove();
-          }, 1000);
+          }, 400);
         }, 100);
       } else {
         newPage.addClass('active');
-        isPageLoad = false;
+        app.isPageLoad = false;
       }
     }
   };

@@ -89,28 +89,28 @@
   </script>
 
   <script type="type/html" id="appt-view">
-  <div id='<%= m.pageID %>' class="page inactive">
-    <header>
-      <nav class="appt-nav">
-        <h1>Appts</h1>
-        <button class="back-btn"><</button>
-        <button class="edit-btn">e</button>
-      </nav>
-    </header>
+    <div id='<%= m.pageID %>' class="page inactive">
+      <header>
+        <nav class="appt-nav">
+          <h1>Appts</h1>
+          <button class="back-btn"><</button>
+          <button class="edit-btn">e</button>
+        </nav>
+      </header>
 
-    <div class="appt-view-content">
-      <div class="appt-view-detail" data-id='<%- m.appointment.aptId %>'>
-        <h3 class="appt-title"><%- m.appointment.title %></h3>
-        <p class="appt-date"><%- m.appointment.date %></p>
-        <p class="appt-time"><%- m.appointment.time %></p>
-        <p class="appt-address"><%- m.appointment.address %></p>
+      <div class="appt-view-content">
+        <div class="appt-view-detail" data-id='<%- m.appointment.aptId %>'>
+          <h3 class="appt-title"><%- m.appointment.title %></h3>
+          <p class="appt-date"><%- m.appointment.date %></p>
+          <p class="appt-time"><%- m.appointment.time %></p>
+          <p class="appt-address"><%- m.appointment.address %></p>
+        </div>
+        <div class="appt-view-weather">
+
+        </div>
+
       </div>
-      <div class="appt-view-weather">
-
-      </div>
-
     </div>
-  </div>
 
   </script>
 

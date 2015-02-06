@@ -2,9 +2,6 @@
 app.AppointmentStore = function() {
   //TODO: Create Store
   //
-  var sampleAppt = {
-    title: 'samples'
-  };
 
   var collection = JSON.parse(localStorage.getItem('collection')) || [];
   //Should have at least these elements:

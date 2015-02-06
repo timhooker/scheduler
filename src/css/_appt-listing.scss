@@ -154,7 +154,7 @@
   bottom: 0;
   min-width: 100%;
   max-width: 100%;
-  transition: left .3s ease-in;
+  transition: left .3s linear;
 }
 .inactive {
   left: 100%;

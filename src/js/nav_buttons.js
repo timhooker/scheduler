@@ -1,6 +1,8 @@
 function navButtons() {
   $('.appt-nav').on('click', '.add-btn', function() {
-    app.manager.goTo('edit', {});
+    app.manager.goTo('edit', {
+      title: 'hanging out'
+    });
   });
 
   $('.appt-nav').on('click', '.back-btn', function() {

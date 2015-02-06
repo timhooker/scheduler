@@ -36,7 +36,9 @@ $(function() {
       // Add appt to datastore
       $('.appt-edit-content').submit(function() {
         var appt = createApptFromForm();
-        app.aptManager.add(appt);
+        if (appt) {
+          app.aptManager.add(appt);
+        }
         resetApptForm();
 
         return false;
@@ -59,6 +61,7 @@ $(function() {
         } catch(e) {
           // show the catch error
           console.log(e);
+          return;
         }
 
         return newApt;
