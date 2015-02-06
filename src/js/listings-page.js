@@ -1,21 +1,24 @@
-function listingsPageEvents() {
+function listingsPageButtons() {
 
   $('.appt').on('click', '.appt-details', function() {
     // clicking on appt brings up the view page
-    var details = $(this);
-    var appt = details.closest('.appt');
-    var aptId = appt.data('id');
-    // console.log(aptId);
-
-    app.viewAppointment(aptId);
-    // navButtons();
+    var aptListing = $(this);
+    // find the ID of the object
+    var aptId = aptListing.closest('.appt').data('id');
+    // find the index of the object
+    var aptIndex = app.aptManager.findById(aptId);
+    // get the object store
+    var appointments = app.aptManager.query();
+    console.log(appointments);
+    // show the appropriate page
+    app.manager.goTo('view', 0);
   });
 
   $('.appt').on('click', '.appt-delete-btn', function() {
     // clicking on delete brings up the delete prompt
     var deleteBtn = $(this);
     var appt = deleteBtn.closest('.appt');
-    var aptId = appt.data("id");
+    var aptId = appt.data('id');
     var confirmDelete = appt.children('.appt-delete');
     // show the delete
     confirmDelete.fadeIn('fast');
@@ -23,7 +26,6 @@ function listingsPageEvents() {
     confirmDelete.children('.appt-confirm-delete').on('click', function() {
       appt.remove();
       var index = app.aptManager.findById(aptId);
-      // console.log(index);
       app.aptManager.remove(index);
     });
     // if cancelled, remove

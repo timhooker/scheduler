@@ -4,10 +4,8 @@ app.AppointmentStore = function() {
   //
   var sampleAppt = {
     title: 'samples'
-  }
-
+  };
   var collection = JSON.parse(localStorage.getItem('collection')) || [];
-
   //Should have at least these elements:
   var storeLocal = function () {
     localStorage.setItem('collection', JSON.stringify(collection));
@@ -15,25 +13,23 @@ app.AppointmentStore = function() {
 
   var self = {
     add: function(obj, arrayIndex) {
-      console.log(arrayIndex);
-
       if (arrayIndex >= 0) {
         collection.splice(arrayIndex, 1, obj);
       } else {
         collection.push(obj);
       }
+      storeLocal();
 
       return true;
     },
     query: function() {
-
-      return collection;
+      return collection ;
     },
     remove: function(index) {
-      return collection.splice(index, 1);
-
+      collection = collection.splice(index, 1);
       storeLocal();
-      // return;
+
+      return collection;
     },
     findById: function(objId) {
       // returns the index of the appointment by ID
@@ -52,7 +48,4 @@ app.AppointmentStore = function() {
     }
   };
   return self;
-  //add(appointment)
-  //removeById(appointmentId)
-  //query()
 };

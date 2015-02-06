@@ -2,6 +2,13 @@
 //appt
 app.Appointment = function (spec, currentAptId) {
   //TODO Add Constructor Function
+  // if (!spec.title || spec.title.trim() === '') {
+  //   throw 'Title is required';
+  // } else if (!spec.date || spec.date.trim() === '') {
+  //   throw 'Date is required';
+  // } else if (!spec.time || spec.time.trim() === '') {
+  //   throw 'Time is required';
+  // }
 
   return {
     title: spec.title,

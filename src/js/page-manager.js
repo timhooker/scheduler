@@ -1,18 +1,3 @@
-//var manager = PageManager();
-//
-//manager.registerPage('list', function () {
-  //HERE, you render the list page
-//});
-//
-// manager.registerPage('edit', function () {
-//   //HERE, you render the edit page
-// });
-//
-// manager.goTo('list', appointments);
-
-
-//PageManager is responsible for changing from one
-//page to another in our single page app
 app.PageManager = function (rootElement) {
     //TODO: implement an obect which makes changing pages
     //convenient and relatively easy
@@ -20,17 +5,45 @@ app.PageManager = function (rootElement) {
     //registerPage(name, callback)
     //goToPage(name);
 
-  var pages = {};
+  //Grabbing all our templates and storing them
+
+  var isPageLoad = true;
+
+  app.pages = {};
 
   return {
     registerPage: function (name, callback) {
 
       // Where do we store the templates??
-      pages[name] = callback;
+      app.pages[name] = callback;
     },
 
     goTo: function(name, data) {
-      pages[name](data);
+      app.pages[name](data);
+      var newPage = $('#appt-' + name);
+
+      if(!isPageLoad) {
+          // is there a way to only remove the second class?
+        setTimeout(function() {
+          var currentPage = $('.page').first();
+          currentPage.removeClass('active');
+          newPage.addClass('active');
+          setTimeout(function() {
+            $('.page').first().remove();
+          }, 1000);
+        }, 100);
+      } else {
+        newPage.addClass('active');
+        isPageLoad = false;
+      }
     }
   };
 };
+app.views = {};
+
+$('script[type="type/html"]').each(function () {
+
+  var elem = $(this).remove();
+
+  app.views[elem.attr('id')] = _.template(elem.html(), { 'variable': 'm'});
+});
