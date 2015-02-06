@@ -34,7 +34,10 @@ $(function() {
       $('.appt-edit-time').timepicker();
       $('.appt-edit-date').pickadate({
         today: '',
-        close: ''
+        close: '',
+        onSet: function(context) {
+          console.log('Just set stuff:', context);
+        }
       });
 
       // Give focus to the first input on load
