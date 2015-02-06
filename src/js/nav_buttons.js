@@ -1,5 +1,6 @@
 function navButtons() {
   $('.appt-nav').on('click', '.add-btn', function() {
+    $('.add-btn').attr('disabled');
     app.manager.goTo('edit', {});
   });
 
