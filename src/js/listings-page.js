@@ -12,9 +12,6 @@ function listingsPageButtons() {
     // show the appropriate page
     $('.appt').off('click', '.appt-details');
     app.manager.goTo('view', appointments[aptIndex]);
-
-    var qAddress = appointments[aptIndex].cityState;
-    console.log(qAddress);
   });
 
   $('.appt').on('click', '.appt-delete-btn', function() {
