@@ -41,11 +41,8 @@ $(function() {
         app.views['appt-edit']({ appointment: appt, pageID: pageID }) );
 
       navButtons();
-      $('.appt-edit-time').timepicker();
-      $('.appt-edit-date').pickadate({
-        today: '',
-        close: ''
-      });
+      $('.appt-edit-time').pickatime();
+      $('.appt-edit-date').pickadate();
 
       // Give focus to the first input on load
       $('.appt-edit-title').focus();
@@ -53,7 +50,28 @@ $(function() {
       // Add Event Listener to Form
       // Create appt variable from createApptFromForm function
       // Add appt to datastore
-      $('.appt-edit-content').submit(function() {
+      $('.appt-edit-content').isHappy({
+
+        fields: {
+        // reference the field you're talking about, probably by `id`
+        // but you could certainly do $('[name=name]') as well.
+          '.appt-edit-title': {
+            required: true,
+            message: 'This event needs a title'
+          },
+          '.appt-edit-date': {
+            required: true,
+            message: 'A date is important for record keeping'
+          },
+          '.appt-edit-time': {
+            required: true,
+            message: 'Let\'s add a time so you\'re not late'
+          }
+
+        }
+      });
+
+      $('.appt-edit-content').on('submit', function() {
         var appt = createApptFromForm();
         // var apptIndex =
         if (appt) {
@@ -63,6 +81,8 @@ $(function() {
 
         return false;
       });
+
+
 
       function createApptFromForm() {
         var newAppt = {
@@ -104,7 +124,6 @@ $(function() {
 
   // var appointments = app.aptManager.query();
   app.manager.goTo('listing');
-  app.isHome = false;
 
 
 
