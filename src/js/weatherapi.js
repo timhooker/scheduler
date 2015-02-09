@@ -30,7 +30,7 @@ function jsonP(url, callback) {
         },
         error: function (e) {
             console.log(e.message);
-            console.log('Did not work.')
+            console.log('Did not work.');
         }
     });
 }
@@ -114,7 +114,7 @@ function GetFutureWeather(e) {
         for (i = 0; i < dateMatch.hourly.length; ++i) {
           if (dateMatch.hourly[i].time >= apptTime) {
             futureTempF = String(dateMatch.hourly[i].tempF);
-            futureDesc = String(dateMatch.hourly[i].weatherDesc[0].value)
+            futureDesc = String(dateMatch.hourly[i].weatherDesc[0].value);
 
             // $('.weather-forecast__icon')[0].textContent = futureIcon;
             $('.weather-forecast__temp')[0].textContent = futureTempF + 'º';
