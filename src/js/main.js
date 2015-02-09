@@ -61,7 +61,7 @@ $(function() {
       $('.appt-edit-date').pickadate();
 
       // Give focus to the first input on load
-      $('.appt-edit-title').focus();
+      // $('.appt-edit-title').focus();
 
       // Add Event Listener to Form
       // Create appt variable from createApptFromForm function
