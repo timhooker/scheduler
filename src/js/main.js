@@ -5,16 +5,18 @@ $(function() {
 
       var pageID = 'appt-listing';
       var listingArr = app.aptManager.query();
+      //
+      // listingArr.sort(function(a,b) {
+      //   a = (a.time);
+      //   b = (b.time);
+      //   return a<b ? -1 : a>b ? 1 : 0;
+      // });
 
-      listingArr.sort(function(a,b) {
-        a = (a.time);
-        b = (b.time);
-        return a<b ? -1 : a>b ? 1 : 0;
-      });
-      
       listingArr.sort(function(a, b) {
-        a = new Date(a.date);
-        b = new Date(b.date);
+        console.log(a.date + ' ' + a.time);
+
+        a = new Date(a.date + a.time);
+        b = new Date(b.date + a.time);
         return a<b ? -1 : a>b ? 1 : 0;
       });
 
