@@ -142,6 +142,7 @@ function LocalWeatherCallback(localWeather) {
     var snow = 'img/snow.jpg';
     var night = 'img/night.jpg';
     var currentHour = currentTime.substring(0,2).replace(/:/g , '');
+    console.log(currentHour);
 
     output += '<p class="temp">' + localWeather.data.current_condition[0].temp_F + 'º' + '</p>';
     output += '<p class="condition">' + localWeather.data.current_condition[0].weatherDesc[0].value + '</p>';
@@ -167,7 +168,7 @@ function LocalWeatherCallback(localWeather) {
       weatherContainer.css('color', 'white');
     }
 
-    if ((Number(currentHour) >= 7) && (pm >= 0)) {
+    if ((Number(currentHour) >= 7 && !12) && (pm >= 0)) {
       weatherContainer.css('background-image', 'url(' + night + ')');
       weatherContainer.css('color', 'rgb(200, 199, 190)');
       console.log('night time');
