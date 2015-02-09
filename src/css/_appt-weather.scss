@@ -1,7 +1,8 @@
 .weather-container {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: black;
-  width: 500px;
-  height: 500px;
   position: absolute;
   margin-top: 64px;
   top: 0;
@@ -10,10 +11,39 @@
   right: 0;
 }
 
+.weather-container:before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color:black;
+  opacity: .2;
+}
+
 .temp {
   position: absolute;
   font-weight: 300;
-  font-size: 5em;
-  top: .5em;
-  left: .5em;
+  font-size: 6em;
+  top: .8em;
+  left: 0.4em;
+  z-index: 1;
+}
+
+.condition {
+  position: absolute;
+  font-weight: 300;
+  font-size: 2em;
+  top: 1.55em;
+  left: 1em;
+  z-index: 1;
+  border-bottom: solid 1px;
+}
+
+.weather-forecast {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #FF8457;
 }

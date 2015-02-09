@@ -1,7 +1,4 @@
 .appt-view-content {
-  // background-image: url(../img/bkg1.jpg);
-  // background-size: cover;
-  // background-attachment: fixed;
   width: 100%;
   position: absolute;
   margin-top: 64px;
@@ -11,6 +8,7 @@
   right: 0;
   padding: 1.25em;
   background: white;
+  overflow: scroll;
 }
 
 .appt-view-content:before {
@@ -36,7 +34,11 @@
   background: white;
 }
 
-.appt-view-weather {
+.appt-view-map {
   width: 90%;
   height: 200px;
+}
+
+.weather-forecast div {
+  display: inline-block;
 }

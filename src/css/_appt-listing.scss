@@ -16,7 +16,6 @@
   right: 0;
   font-family: 'Lato', sans-serif;
   font-weight: 100;
-  // min-width: 100%;
 }
 
 .appt-nav {
@@ -37,35 +36,44 @@
   top: 42%;
   right: 4%;
   transform: translate(0%, -50%);
-  font-size: 2.5em;
+  font-size: 2.75em;
   background: none;
   border: none;
   padding: 0;
   font-family: 'Lato', sans-serif;
   font-weight: 100;
+  color: rgb(234, 234, 234);
+  text-shadow: #9e4200 1px 1px 1px;
 }
 
 .weather-btn {
   position: absolute;
-  top: 42%;
+  top: 49%;
   left: 4%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
-  font-size: 1.5em;
+  font-size: 2.3em;
   background: none;
   border: none;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: docket-icons, 'Lato', sans-serif;
   font-weight: 100;
+  color: #eaeaea;
+  text-shadow: #9e4200 1px 1px 1px;
 }
 
 .appt-nav h2 {
   text-align: center;
   font-family: 'Lato', sans-serif;
-  font-weight: 100;
+  font-weight: 900;
+  font-size: 1.8em;
+  margin-top: 0.7em;
+  color: #fff;
+  text-shadow: rgb(158, 66, 0) 1px 1px 1px;
 }
 
 .appt-content {
-  background-image: url(../img/bkg1.jpg);
+  background-image: url(../img/main.jpg);
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
@@ -75,6 +83,7 @@
   left: 0;
   bottom: 0;
   right: 0;
+  overflow: scroll;
 }
 
 .appt-content:before {
@@ -118,7 +127,7 @@
 }
 
 .appt-details h3 {
-  // margin: 0;
+  font-size: 1.15;
 }
 
 .appt-address-icon {
@@ -184,7 +193,16 @@
 
 .appt-listing-time {
   float: left;
-  margin-right: 8%;
+  margin-right: 6%;
+  color: #FF8457;
+}
+
+.appt-listing-title {
+  width: 220px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 header {
@@ -209,7 +227,6 @@ header {
   left: 0;
 }
 
-
 .edit-btn,
 .back-btn {
   display: block;
@@ -221,10 +238,29 @@ header {
   background: none;
   border: none;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: docket-icons, 'Lato', sans-serif;
   font-weight: 100;
+  color: #eaeaea;
+  text-shadow: #9e4200 1px 1px 1px;
 }
 
 .edit-btn {
-  left: 90%;
+  left: 87.5%;
+  font-size: 1.7em;
+  top: 47%;
+}
+
+.appt-listing-date {
+  width: 120%;
+  background: gainsboro;
+  margin-left: -5%;
+  padding-left: 5%;
+  margin-bottom: 0em;
+  color: rgb(145, 145, 145);
+  border: solid 1px rgb(203, 203, 203);
+  font-size: .85em;
+}
+
+.appt-listing-address {
+  line-height: 0em;
 }

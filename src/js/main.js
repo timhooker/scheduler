@@ -4,6 +4,13 @@ $(function() {
     app.manager.registerPage('listing', function() {
 
       var pageID = 'appt-listing';
+      var listingArr = app.aptManager.query();
+
+      listingArr.sort(function(a, b) {
+        a = new Date(a.date);
+        b = new Date(b.date);
+        return a<b ? -1 : a>b ? 1 : 0;
+      });
 
       $('.wrapper').append(
         app.views['appt-listing']({ appointments: app.aptManager.query(), pageID: pageID }) );
@@ -73,7 +80,7 @@ $(function() {
 
       $('.appt-edit-content').on('submit', function() {
         var appt = createApptFromForm();
-        // var apptIndex =
+
         if (appt) {
           app.aptManager.add(appt, apptIndex);
         }
@@ -82,8 +89,6 @@ $(function() {
         return false;
       });
 
-
-
       function createApptFromForm() {
         var newAppt = {
           title: $('.appt-edit-title').val(),
@@ -91,8 +96,7 @@ $(function() {
           time: $('.appt-edit-time').val(),
           street: $('.appt-edit-street').val(),
           city: $('.appt-edit-city').val(),
-          state: $('.appt-edit-state').val()
-          // city: $('.appt-edit-city-state').val()
+          state: $('.appt-edit-state').val(),
         };
         var newApt;
         try {
@@ -115,7 +119,6 @@ $(function() {
     });
   };
 
-
   // display appointments we have currently
   app.manager = app.PageManager();
   app.aptManager = app.AppointmentStore();
@@ -124,7 +127,5 @@ $(function() {
 
   // var appointments = app.aptManager.query();
   app.manager.goTo('listing');
-
-
 
 });

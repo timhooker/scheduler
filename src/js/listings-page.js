@@ -9,9 +9,12 @@ function listingsPageButtons() {
     var aptIndex = app.aptManager.findById(aptId);
     // get the object store
     var appointments = app.aptManager.query();
+
+    appointments[aptIndex].city + '+' + appointments[aptIndex].state
     // show the appropriate page
     $('.appt').off('click', '.appt-details');
     app.manager.goTo('view', appointments[aptIndex]);
+    GetFutureWeather();
   });
 
   $('.appt').on('click', '.appt-delete-btn', function() {

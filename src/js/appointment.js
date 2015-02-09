@@ -17,7 +17,7 @@ app.Appointment = function (spec, currentAptId) {
     street: spec.street,
     city: spec.city,
     state: spec.state,
-    // zip: spec.zip,
+    zip: spec.zip,
     address: spec.street + " " + spec.city + " " + spec.state,
     aptId: currentAptId || Date.now(),
     equal: function (otherUser) {
