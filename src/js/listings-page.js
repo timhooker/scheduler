@@ -10,7 +10,7 @@ function listingsPageButtons() {
     // get the object store
     var appointments = app.aptManager.query();
 
-    appointments[aptIndex].city + '+' + appointments[aptIndex].state
+    // appointments[aptIndex].city + '+' + appointments[aptIndex].state;
     // show the appropriate page
     $('.appt').off('click', '.appt-details');
     app.manager.goTo('view', appointments[aptIndex]);
