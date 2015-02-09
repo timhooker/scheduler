@@ -12,6 +12,12 @@ $(function() {
         return a<b ? -1 : a>b ? 1 : 0;
       });
 
+      listingArr.sort(function(a,b) {
+        a = (a.time);
+        b = (b.time);
+        return a<b ? -1 : a>b ? 1 : 0;
+      });
+
       $('.wrapper').append(
         app.views['appt-listing']({ appointments: app.aptManager.query(), pageID: pageID }) );
 

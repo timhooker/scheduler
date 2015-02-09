@@ -148,15 +148,15 @@ function LocalWeatherCallback(localWeather) {
 
     // Conditional Background based on weather conditions
 
-    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('cloud') >= 0) {
+    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('cloud') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('over') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('cast') >= 0) {
       weatherContainer.css('background-image', 'url(' + cloud + ')');
       weatherContainer.css('color', 'aliceblue');
     }
-    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('sun') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('clear') >= 0) {
+    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('sun') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('clear') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('shine') >= 0) {
       weatherContainer.css('background-image', 'url(' + sun + ')');
       weatherContainer.css('color', 'rgb(255, 252, 0)');
     }
-    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('rain') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('shower') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('driz') >= 0) {
+    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('rain') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('shower') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('driz') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('drop') >= 0) {
       weatherContainer.css('background-image', 'url(' + rain + ')');
       weatherContainer.css('color', 'rgb(65, 255, 0)');
       weatherContainer.css('background-position', '89%');
