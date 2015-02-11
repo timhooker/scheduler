@@ -142,21 +142,22 @@ function LocalWeatherCallback(localWeather) {
     var snow = 'img/snow.jpg';
     var night = 'img/night.jpg';
     var currentHour = currentTime.substring(0,2).replace(/:/g , '');
+    console.log(currentHour);
 
     output += '<p class="temp">' + localWeather.data.current_condition[0].temp_F + 'º' + '</p>';
     output += '<p class="condition">' + localWeather.data.current_condition[0].weatherDesc[0].value + '</p>';
 
     // Conditional Background based on weather conditions
 
-    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('cloud') >= 0) {
+    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('cloud') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('over') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('cast') >= 0) {
       weatherContainer.css('background-image', 'url(' + cloud + ')');
       weatherContainer.css('color', 'aliceblue');
     }
-    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('sun') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('clear') >= 0) {
+    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('sun') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('clear') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('shine') >= 0) {
       weatherContainer.css('background-image', 'url(' + sun + ')');
       weatherContainer.css('color', 'rgb(255, 252, 0)');
     }
-    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('rain') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('shower') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('driz') >= 0) {
+    if (localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('rain') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('shower') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('driz') >= 0 || localWeather.data.current_condition[0].weatherDesc[0].value.toLowerCase().indexOf('drop') >= 0) {
       weatherContainer.css('background-image', 'url(' + rain + ')');
       weatherContainer.css('color', 'rgb(65, 255, 0)');
       weatherContainer.css('background-position', '89%');
@@ -167,7 +168,7 @@ function LocalWeatherCallback(localWeather) {
       weatherContainer.css('color', 'white');
     }
 
-    if ((Number(currentHour) >= 7) && (pm >= 0)) {
+    if ((Number(currentHour) >= 7 && !12) && (pm >= 0)) {
       weatherContainer.css('background-image', 'url(' + night + ')');
       weatherContainer.css('color', 'rgb(200, 199, 190)');
       console.log('night time');

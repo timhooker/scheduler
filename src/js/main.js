@@ -6,11 +6,40 @@ $(function() {
       var pageID = 'appt-listing';
       var listingArr = app.aptManager.query();
 
+      for (i = 0; i < listingArr.length; ++i) {
+        // var pm = $('.appt-time')[0].textContent.toLowerCase().indexOf('pm');
+
+        newStr = listingArr[i].date.replace(/,/g , '');
+        var splitArr = newStr.split(' ');
+        listingArr[i].date = splitArr[1] + ' ' + splitArr[0] + ', ' + splitArr[2];
+
+        // console.log(listingArr[i].date);
+
+        var pm = listingArr[i].time.replace(/ /g , '').toLowerCase().indexOf('pm');
+        var ending = listingArr[i].time.slice(-3);
+        var replaced = listingArr[i].time.replace(ending, '').replace(/:/g , '') + 0;
+        var newTime;
+
+        if (pm >= 0) {
+          replaced = String(Number(replaced) + 12000) + ':00';
+          newTime = replaced.substring(0,2) + ':' + replaced.substring(3);
+          // console.log(newTime);
+        } else {
+          replaced = String(Number(replaced)) + ':00';
+          newTime = replaced.substring(0,2) + ':' + replaced.substring(3);
+          // console.log(newTime);
+        }
+
+        listingArr[i].newTime = newTime;
+      }
+      // });
+
       listingArr.sort(function(a, b) {
-        a = new Date(a.date);
-        b = new Date(b.date);
+        a = new Date(a.date + ' ' + a.newTime);
+        b = new Date(b.date + ' ' + b.newTime);
         return a<b ? -1 : a>b ? 1 : 0;
       });
+
 
       $('.wrapper').append(
         app.views['appt-listing']({ appointments: app.aptManager.query(), pageID: pageID }) );
@@ -52,7 +81,7 @@ $(function() {
       $('.appt-edit-date').pickadate();
 
       // Give focus to the first input on load
-      $('.appt-edit-title').focus();
+      // $('.appt-edit-title').focus();
 
       // Add Event Listener to Form
       // Create appt variable from createApptFromForm function
